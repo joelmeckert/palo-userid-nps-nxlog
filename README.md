@@ -55,7 +55,7 @@
   - User-ID Agent buffers and optimizes communication with the firewall
 
 # Production History
-This solution worked very well in an environment that was running Microsoft NPS with a Palo Alto firewall. Relying on the User-ID Agent on the firewall caused issues with the management plane, and 'known user' of the traffic would be occasionally blank, as the firewall was overwhelmed. Having the ability to create firewall rules based on User-ID was a game-changer.
+This solution worked very well in an environment that was running Microsoft NPS with a Palo Alto firewall. Relying on the User-ID Agent on the firewall caused issues with the management plane, and 'known user' of the traffic would be occasionally blank, as the firewall was overwhelmed. Having the ability to create firewall rules based on User-ID was a game-changer, especially with Covid protocols and a diverse staff base.
 
 # Final Notes
 If you know a reseller who could sell me a license for a VM-500 or a VM-100, you would receive lots of love, and *All You Need Is Love*.
