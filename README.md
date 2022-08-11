@@ -7,11 +7,12 @@
 # Installation
 ## NPS
 - Configure Microsoft NPS with the default XML logging
-## NXLog
+## NXLog on NPS Box
 - Install NXLog Community Edition
 - Modify configuration file, copy to "C:\Program Files (x86)\nxlog\conf\nxlog.conf"
 ## Windows Firewall on User-ID Agent host
 - Allow for TCP 514 for inbound syslog
+- TCP is used, as it supports a greater length of syslog packet, and is reliable, as we need this to be a reliable process
 ## Palo Alto User-ID Agent
 - Install User-ID Agent on a domain member server, not a domain controller
 - RADIUS Connect, Syslog configuration, replace NBDOMAIN with NetBIOS domain
