@@ -7,7 +7,7 @@
 # Obtain a list of Domain Computers, merge them to the exclude list in "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
 # It is recommended to run this regularly on the Palo Alto User-ID Agent machine, Active Directory cmdlets are required
 
-# Permanent configuration file for excluded hosts
+# Permanent configuration file for excluded hosts, optional, but recommended
 $ConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list_permanent.txt"
 
 # Palo Alto configuration file for ignored users
@@ -26,7 +26,7 @@ Else {
 $Computers = Get-ADComputer -Filter * | Select-Object -ExpandProperty Name
 
 # Create a combined list of unique entries
-$IgnoreList = $BlackList + $Computers | Sort-Object -Unique
+$IgnoreList = @($BlackList,$Computers) | Sort-Object -Unique
 
 # Write the configuration file
 $IgnoreList | Set-Content -Path $LiveConfigFile
