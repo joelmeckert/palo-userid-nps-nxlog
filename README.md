@@ -16,7 +16,7 @@
 ## Palo Alto User-ID Agent Host
 - Windows Firewall
   - Allow for TCP 514 for inbound syslog
-  - TCP is used, as it supports a greater length of syslog packet, and is reliable, as we need this to be a reliable process
+  - TCP is used, as it supports a greater length of syslog packet, and is reliable, as firewall rules are based on User-ID
 ## Palo Alto User-ID Agent Installation
 - Install User-ID Agent on a domain member server, not a domain controller
 - RADIUS Connect, Syslog configuration, replace NBDOMAIN with NetBIOS domain
