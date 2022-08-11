@@ -1,5 +1,8 @@
 # palo-userid-nps-nxlog
-Palo Alto User-ID with Microsoft NPS RADIUS, XML logs, and nxlog CE to tail the log.
+- Set the Palo Alto User-ID based on Microsoft NPS RADIUS authentication via NXLog CE as a tail/syslog collector, User-ID Agent on a Windows server
+- Create firewall rules based on User-ID or group
+- Palo Alto User-ID with Microsoft NPS RADIUS, XML logs, and NXLog CE to tail the log
+- Optionally, run a PowerShell script on a regular basis on the User-ID Agent Windows server to add Active Directory computers to the exclude list
 
 # Installation
 ## NPS
