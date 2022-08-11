@@ -13,10 +13,11 @@
   - Replace NetBIOS domain name in configuration file with your NetBIOS domain
   - Regular expressions are used to parse and reconstruct the XML, so that it is under the required size and minimizes the data to the User-ID Agent
   - Extranneous entries are discarded rather than forwarded to the User-ID Agent, as per the regular expression(s) in the NXLog configuration file
-## Windows Firewall on User-ID Agent Host
-- Allow for TCP 514 for inbound syslog
-- TCP is used, as it supports a greater length of syslog packet, and is reliable, as we need this to be a reliable process
-## Palo Alto User-ID Agent
+## Palo Alto User-ID Agent Host
+- Windows Firewall
+  - Allow for TCP 514 for inbound syslog
+  - TCP is used, as it supports a greater length of syslog packet, and is reliable, as we need this to be a reliable process
+## Palo Alto User-ID Agent Installation
 - Install User-ID Agent on a domain member server, not a domain controller
 - RADIUS Connect, Syslog configuration, replace NBDOMAIN with NetBIOS domain
   - Event regex
@@ -41,5 +42,17 @@
   - Filters => RADIUS Connect, event type: Login
   - Filters => RADIUS Disconnect, event type: Logout
 
-# Implementation History
+# Notes
+- Session Log monitoring has a lot of noise, but it is noise that is better handled by a host that is running the User-ID Agent on Windows
+- It is important to preserve the resources of the management plane on the firewall
+- The configuration of the communication of the User-ID Agent is outside of the scope of this document, but Palo Alto has public documentation on this process
+- Minimize User-ID traffic to the Palo Alto, protect the management plane
+  - NXLog filters the syslog connections by regular expression
+  - Filtered events with minimalistic data are submitted via syslog
+  - Where implemented, the PowerShell script will obtain a list of computers in the domain and add them to the user exclusion file
+  - Entries in the exclusion file are not submitted to the firewall, and lessen the load on the management plane
+  - User-ID Agent buffers and optimizes communication with the firewall
+
+# Production History
 This solution worked very well in an environment that was running Microsoft NPS with a Palo Alto firewall. Relying on the User-ID Agent on the firewall caused issues with the management plane, and 'known user' of the traffic would be occasionally blank, as the firewall was overwhelmed. Having the ability to create firewall rules based on User-ID was a game-changer.
+If you know a reseller who could sell me a license for a VM-500 or a VM-100, you would receive lots of love
