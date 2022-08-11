@@ -6,7 +6,7 @@
 
 # Installation
 ## Microsoft NPS/RADIUS
-- Configure Microsoft NPS with the default XML logging, and the usual NPS configuration that is already in-place
+- Configure Microsoft NPS with the default XML logging, and the usual NPS configuration that is already in place
 ## NXLog on NPS Host
 - Install NXLog Community Edition
 - Modify configuration file, copy to "C:\Program Files (x86)\nxlog\conf\nxlog.conf"
