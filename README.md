@@ -44,7 +44,7 @@
 
 # Notes
 - Session Log monitoring has a lot of noise, but it is noise that is better handled by a host that is running the User-ID Agent on Windows
-- It is important to preserve the resources of the management plane on the firewall
+- It is of ***utmost importantce*** to preserve the resources of the management plane on the firewall
 - The configuration of the communication of the User-ID Agent is outside of the scope of this document, but Palo Alto has public documentation on this process
 - Minimize User-ID traffic to the Palo Alto, ***protect the management plane!!!***
   - NXLog filters the syslog connections by regular expression
