@@ -6,7 +6,7 @@ Palo Alto User-ID with Microsoft NPS RADIUS, XML logs, and nxlog CE to tail the 
 - Copnfigure Microsoft NPS with the default XML logging
 ## NXLog
 - Install NXLog Community Edition
-- Modify configuration file, copy to "C:\Program Files (x86)\nxlog\nxlog.conf"
+- Modify configuration file, copy to "C:\Program Files (x86)\nxlog\conf\nxlog.conf"
 ## Windows Firewall on User-ID Agent host
 - Allow for UDP 514 for inbound syslog
 ## Palo Alto User-ID Agent
