@@ -12,7 +12,7 @@
 - Modify configuration file, copy to "C:\Program Files (x86)\nxlog\conf\nxlog.conf"
   - Replace NetBIOS domain name in configuration file with your NetBIOS domain
   - Regular expressions are used to parse and reconstruct the XML, so that it is under the required size and minimizes the data to the User-ID Agent
-  - Extranneous entries are discarded rather than forwarded to the User-ID Agent, as per the regular expression(s) in the NXLog configuration file
+  - Extraneous entries are discarded rather than forwarded to the User-ID Agent, as per the regular expression(s) in the NXLog configuration file
   - My reptilian brain had difficulties with the syntax of NXLog's regex, but Übermensch prevailed
 ## Palo Alto User-ID Agent Host
 - Windows Firewall
