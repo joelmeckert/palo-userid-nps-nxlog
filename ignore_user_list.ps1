@@ -14,11 +14,13 @@ $ConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list_permanent.tx
 $LiveConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
 
 If (!(Test-Path $ConfigFile)) {
-  $ConfigFile = $LiveConfigFile
+  # Get contents of existing ignore file
+  $BlackList = Get-Content -Path $LiveConfigFile
 }
-
-# Get contents of master ignore file
-$BlackList = Get-Content -Path $ConfigFile
+Else {
+  # Get contents of master ignore file
+  $BlackList = Get-Content -Path $ConfigFile
+}
 
 # Get a list of computers in Active Directory
 $Computers = Get-ADComputer -Filter * | Select-Object -ExpandProperty Name
