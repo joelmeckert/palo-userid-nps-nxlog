@@ -1,3 +1,5 @@
+# This code is licensed under MIT license (see LICENSE for details)
+# Joel Eckert, joel@joelme.ca, 2022-08-11
 #Requires -RunAsAdministrator
 
 # This is useful to exclude computer accounts from showing up on the User-ID log, less pollution is better
