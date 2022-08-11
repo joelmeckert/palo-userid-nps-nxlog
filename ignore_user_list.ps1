@@ -29,4 +29,4 @@ $Computers = Get-ADComputer -Filter * | Select-Object -ExpandProperty Name
 $IgnoreList = $BlackList + $Computers | Sort-Object -Unique
 
 # Write the configuration file
-$IgnoreList | Set-Content -Path $ConfigFile
+$IgnoreList | Set-Content -Path $LiveConfigFile
