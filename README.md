@@ -33,3 +33,6 @@ Palo Alto User-ID with Microsoft NPS RADIUS, XML logs, and nxlog CE to tail the 
   - Default Domain Name: NetBIOS name of domain
   - Filters => RADIUS Connect, event type: Login
   - Filters => RADIUS Disconnect, event type: Logout
+
+# Implementation History
+This solution worked very well in an environment that was running Microsoft NPS with a Palo Alto firewall. Relying on the User-ID Agent on the firewall caused issues with the management plane, and 'known user' of the traffic would be occasionally blank, as the firewall was overwhelmed.
