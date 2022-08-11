@@ -7,17 +7,24 @@
 # Obtain a list of Domain Computers, merge them to the exclude list in "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
 # It is recommended to run this regularly on the Palo Alto User-ID Agent machine, Active Directory cmdlets are required
 
-# Palo Alto configuration file for ignored users
-$ConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
+# Permanent configuration file for excluded hosts
+$ConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list_permanent.txt"
 
-# Get the content of the current blacklist file
+# Palo Alto configuration file for ignored users
+$LiveConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
+
+If (!(Test-Path $ConfigFile)) {
+  $ConfigFile = $LiveConfigFile
+}
+
+# Get contents of master ignore file
 $BlackList = Get-Content -Path $ConfigFile
 
 # Get a list of computers in Active Directory
 $Computers = Get-ADComputer -Filter * | Select-Object -ExpandProperty Name
 
 # Create a combined list of unique entries
-$NewList = $BlackList + $Computers | Sort-Object -Unique
+$IgnoreList = $BlackList + $Computers | Sort-Object -Unique
 
 # Write the configuration file
-$NewList | Set-Content -Path $ConfigFile
+$IgnoreList | Set-Content -Path $ConfigFile
