@@ -15,18 +15,27 @@ $LiveConfigFile = "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
 
 If (!(Test-Path $ConfigFile)) {
   # Get contents of existing ignore file
+  $BlackList = Get-Content -Path $ConfigFile
+}
+ElseIf (Test-Path $LiveConfigFile) {
+  # Get contents of master ignore file
   $BlackList = Get-Content -Path $LiveConfigFile
 }
 Else {
-  # Get contents of master ignore file
-  $BlackList = Get-Content -Path $ConfigFile
+  # Configuration file does not exist, start from a fresh configuration
+  $BlackList = @()
 }
 
 # Get a list of computers in Active Directory
 $Computers = Get-ADComputer -Filter * | Select-Object -ExpandProperty Name
 
+$DomainComputers = @()
+ForEach ($Computer in $Computers) {
+  $DomainComputers += $Computer + '$'
+}
+
 # Create a combined list of unique entries
-$IgnoreList = @($BlackList,$Computers) | Sort-Object -Unique
+$IgnoreList = @($BlackList,$DomainComputers) | Sort-Object -Unique
 
 # Write the configuration file
 $IgnoreList | Set-Content -Path $LiveConfigFile
