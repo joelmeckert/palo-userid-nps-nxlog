@@ -10,6 +10,8 @@
 ## NXLog on NPS Box
 - Install NXLog Community Edition
 - Modify configuration file, copy to "C:\Program Files (x86)\nxlog\conf\nxlog.conf"
+  - Replace NetBIOS domain name in configuration file with your NetBIOS domain
+  - Regular expressions are used to parse and reconstruct the XML, so that it is under the required size and minimizes the data to the User-ID Agent
 ## Windows Firewall on User-ID Agent host
 - Allow for TCP 514 for inbound syslog
 - TCP is used, as it supports a greater length of syslog packet, and is reliable, as we need this to be a reliable process
