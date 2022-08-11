@@ -5,7 +5,7 @@
 - Optionally, run a PowerShell script on a regular basis on the User-ID Agent Windows server to add Active Directory computers to the exclude list
 
 # Installation
-## NPS
+## Microsoft NPS/RADIUS
 - Configure Microsoft NPS with the default XML logging
 ## NXLog on NPS Host
 - Install NXLog Community Edition
