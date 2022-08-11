@@ -2,7 +2,7 @@
 # Joel Eckert, joel@joelme.ca, 2022-08-11
 #Requires -RunAsAdministrator
 
-# This is useful to exclude computer accounts from showing up on the User-ID log, less pollution is better
+# This is useful to exclude computer accounts from showing up on the User-ID log, mo money, mo problems
 
 # Obtain a list of Domain Computers, merge them to the exclude list in "C:\Program Files\Palo Alto Networks\ignore_user_list.txt"
 # It is recommended to run this regularly on the Palo Alto User-ID Agent machine, Active Directory cmdlets are required
