@@ -24,4 +24,12 @@ Palo Alto User-ID with Microsoft NPS RADIUS, XML logs, and nxlog CE to tail the 
   ```
   <Framed-IP-Address\sdata_type="3">([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})<\/Framed-IP-Address>
   ```
-  
+- Access Control List => Syslog
+  - Allow from IP address of NPS/RADIUS server
+- User Identification Agent => Discovery
+  - Name: Display name of NPS
+  - Server: IP of NPS
+  - Server Type: Syslog Sender
+  - Default Domain Name: NetBIOS name of domain
+  - Filters => RADIUS Connect, event type: Login
+  - Filters => RADIUS Disconnect, event type: Logout
