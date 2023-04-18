@@ -5,7 +5,7 @@
 - Optionally, run a PowerShell script on a regular basis on the User-ID Agent Windows server to add Active Directory computers to the exclude list
 
 # Foreword
-- You may alternatively wish to consider Ryan Newington's pan-ra-proxy as another option, to proxy the user-id traffic from any RADIUS accounting to the Palo Alto User-ID Agent, available at https://github.com/lithnet/pan-ra-proxy
+You may alternatively wish to consider Ryan Newington's pan-ra-proxy as another option, to proxy the user-id traffic from any RADIUS accounting to the Palo Alto User-ID Agent, available at https://github.com/lithnet/pan-ra-proxy
 
 # Installation
 ## Microsoft NPS/RADIUS
@@ -20,7 +20,7 @@
 ## Palo Alto User-ID Agent Host
 - Windows Firewall
   - Allow for TCP 514 for inbound syslog
-  - TCP is used, as it supports a greater length of syslog packet, and is reliable, as firewall rules are based on User-ID
+  - TCP is used, as it supports a greater length of syslog packet, and has guaranteed delivery, which is relevant as firewall rules are based on User-ID
 ## Palo Alto User-ID Agent Installation
 - Install User-ID Agent on a domain member server, not a domain controller
 - RADIUS Connect, Syslog configuration, replace NBDOMAIN with NetBIOS domain
