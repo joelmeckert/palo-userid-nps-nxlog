@@ -1,4 +1,4 @@
-![Cyberthion](assets/cyberthion-20.png)
+![Cyberthion](assets/logo.png)
 # palo-userid-nps-nxlog
 - Set the Palo Alto User-ID based on Microsoft NPS RADIUS authentication via NXLog CE as a tail/syslog collector, User-ID Agent on a Windows server
 - Create firewall rules based on User-ID or group
