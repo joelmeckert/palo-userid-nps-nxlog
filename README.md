@@ -5,7 +5,7 @@
 - Optionally, run a PowerShell script on a regular basis on the User-ID Agent Windows server to add Active Directory computers to the exclude list
 
 # Foreword
-You may alternatively wish to consider Ryan Newington's pan-ra-proxy as another option, to proxy the user-id traffic from any RADIUS accounting to the Palo Alto User-ID Agent, available at https://github.com/lithnet/pan-ra-proxy
+You may alternatively wish to consider Ryan Newington's [pan-ra-proxy](https://github.com/lithnet/pan-ra-proxy "pan-ra-proxy is a windows service that recieves RADIUS accounting requests, and submits them as User-ID updates to a Palo Alto firewall") as another option, to proxy the user-id traffic from any RADIUS accounting to the Palo Alto User-ID Agent, available at https://github.com/lithnet/pan-ra-proxy
 
 # Installation
 ## Microsoft NPS/RADIUS
