@@ -6,9 +6,9 @@
 
 # Foreword
 ## Alternative Considerations
-You may alternatively wish to consider Ryan Newington's [pan-ra-proxy](https://github.com/lithnet/pan-ra-proxy "pan-ra-proxy is a windows service that recieves RADIUS accounting requests, and submits them as User-ID updates to a Palo Alto firewall") as another option, to proxy the user-id traffic from any
+You may alternatively wish to consider Ryan Newington's [pan-ra-proxy](https://github.com/lithnet/pan-ra-proxy "pan-ra-proxy is a windows service that recieves RADIUS accounting requests, and submits them as User-ID updates to a Palo Alto firewall") as another option, to proxy the user-id traffic from any RADIUS accounting back-end.
 ## Suggested Modifications
-The PowerShell script that obtains computers from Active Directory is perhaps superfluous, and could be achieved with regex with NXlog at the syslog collector level, excluding computer accounts with a trailing '$', but I am unable to test
+The PowerShell script that obtains computers from Active Directory is perhaps superfluous, and could be achieved with regex with NXlog at the syslog collector level, excluding computer accounts with a trailing '$', but I am unable to test.
 
 # Installation
 ## Microsoft NPS/RADIUS
